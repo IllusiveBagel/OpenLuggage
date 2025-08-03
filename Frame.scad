@@ -1,6 +1,10 @@
 use <hardware/profile.scad>
 use <hardware/bracket.scad>
 
+width = 400; // [80:1000]
+depth = 300; // [80:1000]
+height = 150; // [80:1000]
+
 module frameBase(width, depth) {
     rotate([0,90,0]) translate([-10,10,0]) profile(width);
     rotate([0,90,0]) translate([-10,depth - 10,0]) profile(width);
@@ -34,4 +38,4 @@ module frame(width, depth, height) {
     translate([width,depth-20,0]) rotate([0,0,90]) bracketSide(height);
 }
 
-frame(400, 300, 150);
+frame(width, depth, height);
